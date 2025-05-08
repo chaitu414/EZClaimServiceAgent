@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Embedded Messaging POC</title>
+</head>
+<body>
+<!-- Display Image -->
+<img src="FullsteamPaymentsUIImage.png" alt="FullsteamPaymentsUIImage" style="width: 100vw; height: 100vh;">
+<!-- Script for Embedded Messaging -->
+<script type='text/javascript'>
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+
+			embeddedservice_bootstrap.init(
+				'00DcU000000XAGk',
+				'FPCustomerServiceAgent',
+				'https://saas-saas-2612--devwork.sandbox.my.site.com/ESWFPCustomerServiceAgent1744793719401',
+				{
+					scrt2URL: 'https://saas-saas-2612--devwork.sandbox.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+</script>
+<script type='text/javascript' src='https://saas-saas-2612--devwork.sandbox.my.site.com/ESWFPCustomerServiceAgent1744793719401/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>	
+</body>
+</html>
